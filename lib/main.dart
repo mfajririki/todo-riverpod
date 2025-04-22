@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_riverpod/screens/home_screen.dart';
 import 'package:todo_riverpod/screens/todo_screen.dart';
 
 void main() {
@@ -11,6 +12,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: TodoScreen());
+    return MaterialApp(
+      home: HomeScreen(),
+      routes: {'/todo': (context) => const TodoScreen()},
+    );
   }
 }
